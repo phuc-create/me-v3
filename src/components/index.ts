@@ -1,3 +1,4 @@
 import Button from './Button'
+import Portal from './Portal'
 
-export { Button }
+export { Button, Portal }
