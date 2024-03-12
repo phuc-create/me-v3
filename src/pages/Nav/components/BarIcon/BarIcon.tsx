@@ -1,9 +1,11 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './styles.scss'
+interface BarIconProps {
+  active: boolean
+  handleCloseOpen: () => void
+}
 
-const BarIcon = () => {
-  const [active, setActive] = useState(false)
-  const handleCloseOpen = () => setActive(pre => !pre)
+const BarIcon: React.FC<BarIconProps> = ({ active, handleCloseOpen }) => {
   return (
     <div className="bar-icon" onClick={handleCloseOpen}>
       <span className={`bar-icon_line ${active ? 'hidden' : ''}`}></span>
