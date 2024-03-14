@@ -1,6 +1,27 @@
-# Getting Started with Create React App
+# Welcome to me-v3
+simply run this app by using docker
+## One step to get it from localhost
+```
+docker compose up
+```
+open on browser
+```
+localhost:9999
+```
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Manually build and trigger run 
+
+## Docker build images for portflio
+
+```
+docker build -t portfolio/me-v3:0.0.1 .
+```
+
+## Build containers
+
+```
+docker run -dp 9999:9999 --name me-v3-container portfolio/me-v3:0.0.1
+```
 
 ## Available Scripts
 

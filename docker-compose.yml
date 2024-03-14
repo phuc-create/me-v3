@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  me-v3:
+    container_name: me-v3-container
+    image: portfolio/me-v3:0.0.1
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 9999:9999
+    volumes:
+      - './nginx.conf:/etc/nginx/conf.d/default.conf'
+  
