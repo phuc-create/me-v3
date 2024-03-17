@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
+import BarIcon from './components/BarIcon'
 import './styles.scss'
-import { Portal } from '../../../../components'
-import BarIcon from '../BarIcon'
+
 interface BarProps {
   active: boolean
   handleCloseOpen: () => void
@@ -12,7 +12,6 @@ const Bar: React.FC<BarProps> = ({ active, handleCloseOpen }) => {
 
   return (
     <>
-      {/* <Portal> */}
       <div className="nav-bar">
         <span
           className="nav-bar-title"
@@ -22,11 +21,6 @@ const Bar: React.FC<BarProps> = ({ active, handleCloseOpen }) => {
         </span>
         <BarIcon active={active} handleCloseOpen={handleCloseOpen} />
       </div>
-      {/* </Portal> */}
-      {/* <WindowOverlay /> */}
-      {/* <div></div>
-      <div></div>
-      <div></div> */}
     </>
   )
 }
