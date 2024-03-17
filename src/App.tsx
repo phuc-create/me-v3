@@ -1,7 +1,7 @@
 import React from 'react'
 import './App.scss'
 import { Route, Routes } from 'react-router-dom'
-import { Nav } from './pages'
+import { Hero, Nav } from './pages'
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
             parent route paths, and nested route elements render inside
             parent route elements. See the note about <Outlet> below. */}
       <Routes>
-        {/* <Route path="/" element={<Layout />}> */}
+        <Route path="/about-me" element={<Hero />} />
         {/* <Route index element={<Home />} />
           <Route path="about" element={<About />} /> */}
         {/* <Route path="dashboard" element={<Dashboard />} /> */}

@@ -5,6 +5,7 @@ import Bar from './components/Bar'
 import { Button } from '../../components'
 import WindowOverlay from './components/WindowOverlay'
 import classNames from 'classnames'
+import { useGSAP } from '@gsap/react'
 
 const Nav = () => {
   const [active, setActive] = useState(false)
