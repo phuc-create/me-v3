@@ -12,7 +12,7 @@
   // transform: rotate(-45deg);
   scale: 2;
   overflow: hidden;
-  z-index: inherit;
+  z-index: -100;
 
   .overlay {
     position: absolute;
@@ -22,6 +22,7 @@
     opacity: 1;
     // top
     transform: rotate(-45deg) translateY(-200%);
+    z-index: 1;
 
     // middle
     &:nth-child(2) {

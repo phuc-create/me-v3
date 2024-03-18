@@ -1,10 +1,13 @@
 import React from 'react'
 import './styles.scss'
+import classNames from 'classnames'
 interface SectionProps {
   children?: React.ReactNode
+  className?: string
 }
-const Section: React.FC<SectionProps> = ({ children }) => {
-  return <section className="section-wrap">{children}</section>
+const Section: React.FC<SectionProps> = ({ children, className }) => {
+  const cls = classNames('section-wrap', className)
+  return <section className={cls}>{children}</section>
 }
 
 export default Section
