@@ -1,4 +1,5 @@
+import Header from './Header'
 import Hero from './Hero'
-import Nav from './Nav'
+import Menu from './Menu'
 
-export { Hero, Nav }
+export { Hero, Menu, Header }

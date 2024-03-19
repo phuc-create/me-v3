@@ -1,5 +1,7 @@
+import BarIcon from './BarIcon'
 import Button from './Button'
 import Portal from './Portal'
 import Section from './Section'
+import WindowOverlay from './WindowOverlay'
 
-export { Button, Portal, Section }
+export { Button, BarIcon, Portal, Section, WindowOverlay }

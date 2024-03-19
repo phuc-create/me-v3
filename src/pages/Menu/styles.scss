@@ -1,0 +1,42 @@
+@use "../../scss/root" as *;
+@use "../../scss/mixin.scss" as *;
+@use "../../scss/responsive.scss" as *;
+
+.menu-wrap {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-around;
+  height: 450px;
+  transform: translate(-50%, -30%);
+  opacity: 0;
+  visibility: hidden;
+  transition: 1s cubic-bezier(.55, 0, .1, 1);
+  z-index: 4;
+
+  .content-span {
+    font-size: 1.25rem;
+  }
+
+  @include mobile {
+    width: 50%;
+  }
+
+  &.open {
+    transform: translate(-50%, -50%);
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+// @include under {
+//   display: none;
+//   opacity: 0;
+//   visibility: hidden;
+//   z-index: -10;
+// }
+// }
