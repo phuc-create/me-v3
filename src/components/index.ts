@@ -3,6 +3,7 @@ import Button from './Button'
 import Portal from './Portal'
 import Section from './Section'
 import SmoothScroll from './SmoothScroll'
+import Text from './Text'
 import WindowOverlay from './WindowOverlay'
 
-export { Button, BarIcon, Portal, Section, WindowOverlay, SmoothScroll }
+export { Button, BarIcon, Portal, Section, WindowOverlay, SmoothScroll, Text }

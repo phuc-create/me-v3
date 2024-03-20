@@ -1,0 +1,112 @@
+@use "../../../../scss/root" as *;
+@use "../../../../scss/mixin.scss" as *;
+@use "../../../../scss/responsive.scss" as *;
+
+.ab-page-life {
+  height: calc(100vh - 4.75rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  // @include table {
+  //   min-height: 80vh !important;
+  // }
+  .wrap-moutain {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 300px;
+    background-image: url("../../../../assets/mountain.png");
+    background-position: bottom;
+    background-repeat: repeat-x;
+    @include table {
+      background-size: contain;
+    }
+  }
+  .gsap-sun {
+    display: block;
+    position: absolute;
+    width: 100px;
+    top: 11%;
+    left: 10%;
+    height: auto;
+    transform: rotateY(-180deg);
+    transform-origin: center;
+    @include mobile {
+      width: 65px;
+    }
+  }
+  .gsap-bird-n {
+    display: block;
+    position: absolute;
+    width: 17%;
+    top: 54%;
+    left: 17%;
+    height: auto;
+    transform-origin: center;
+  }
+  .gsap-airplane {
+    display: block;
+    position: absolute;
+    width: 425px;
+    bottom: 15%;
+    right: 12%;
+    height: auto;
+    transform-origin: center;
+
+    @include table {
+      width: 285px;
+      bottom: 10%;
+    }
+    @include mobile {
+      right: -5%;
+    }
+  }
+  .gsap-windy {
+    display: block;
+    position: absolute;
+    width: 27%;
+    top: 62%;
+    left: 35%;
+    height: auto;
+    transform-origin: center;
+    animation: windyFly 10s infinite linear;
+    @keyframes windyFly {
+      0% {
+        left: 140%;
+        top: 62%;
+      }
+      2% {
+        left: -100%;
+        top: 50%;
+      }
+      100% {
+        left: -130%;
+      }
+    }
+  }
+
+  .time-life {
+    width: 100%;
+    position: relative;
+    top: -17%;
+    background: transparent;
+
+    .bit-study {
+      font-size: 1rem;
+      line-height: 1.5rem;
+      margin-bottom: 1rem;
+      text-align: left;
+
+      .light-mountain {
+        color: $active-txt;
+      }
+
+      @include mobile {
+        font-size: 0.75rem;
+      }
+    }
+  }
+}

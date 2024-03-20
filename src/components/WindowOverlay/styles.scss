@@ -11,19 +11,20 @@
   // scale: 2;
   overflow: hidden;
   z-index: 2;
-  opacity: 0;
-  visibility: hidden;
+  // opacity: 0;
+  // visibility: hidden;
   transition: 1s cubic-bezier(.55, 0, .1, 1);
   pointer-events: none;
 
   .overlay {
     position: absolute;
-    width: 200%;
+    width: 285%;
     height: 100%;
     transition: 1s cubic-bezier(.55, 0, .1, 1);
-    opacity: 1;
+    background-color: #000000;
+    // opacity: 1;
     // top
-    transform: rotate(-45deg) translateY(-200%);
+    transform: rotate(-45deg) translateY(-300%);
 
     // middle
     &:nth-child(2) {
@@ -32,7 +33,7 @@
 
     // bottom
     &:nth-child(3) {
-      transform: rotate(-45deg) translateY(200%);
+      transform: rotate(-45deg) translateY(300%);
     }
 
     &.open {
@@ -48,9 +49,9 @@
       }
     }
   }
-  &.active {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: all;
-  }
+  // &.active {
+  //   opacity: 1;
+  //   visibility: visible;
+  //   pointer-events: all;
+  // }
 }
