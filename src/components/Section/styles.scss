@@ -3,5 +3,12 @@
   height: 100vh;
   position: relative;
   padding: 3rem 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 
+  .section-container {
+    max-width: 1080px;
+  }
 }
