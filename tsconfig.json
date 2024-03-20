@@ -21,14 +21,14 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react",
-    "paths": {
-      "@me/*": [
-        "./src/*"
-      ],
-      "@components/*": [
-        "./src/components/*"
-      ]
-    }
+    // "paths": {
+    //   "@me/*": [
+    //     "./src/*"
+    //   ],
+    //   "@components/*": [
+    //     "./src/components/*"
+    //   ]
+    // }
   },
   "include": [
     ".eslintrc.js",
