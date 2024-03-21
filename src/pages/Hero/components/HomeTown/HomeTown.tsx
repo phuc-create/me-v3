@@ -7,19 +7,21 @@ import './styles.scss'
 
 const HomeTown = () => {
   return (
-    <Section className="ab-page-life">
-      <img className="gsap-sun" src={Sun} alt="show" />
-      <img className="gsap-bird-n" src={BirdGroup} alt="show" />
-      <div className="wrap-moutain"></div>
-      <img className="gsap-airplane" src={PaperPlane} alt="show" />
-      <div className="time-life">
-        <div className="bit-study">
-          {' '}
+    <Section
+      className="hometown"
+      id="hometown"
+      mainChildren={<div className="wrap-moutain"></div>}
+    >
+      <img className="sun" src={Sun} alt="show" />
+      <img className="bird-group" src={BirdGroup} alt="show" />
+
+      <img className="paper-plane" src={PaperPlane} alt="show" />
+      <div className="contents">
+        <div className="contents-text">
           I have a childhood, born and bred at Dak Lak, where covered surrounded
           by the <span className="light-mountain">mountains</span>
         </div>
-        <div className="bit-study">
-          {' '}
+        <div className="contents-text">
           Now, I'm living in Ho Chi Minh City, where I'll start my career{' '}
         </div>
       </div>
