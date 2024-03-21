@@ -1,0 +1,14 @@
+.college {
+  height: calc(100vh - 4.75rem);
+  overflow: hidden;
+  padding: 3rem 5rem 0 3rem;
+
+  .building {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 68%;
+    background-position: bottom;
+    background-repeat: repeat-x;
+  }
+}

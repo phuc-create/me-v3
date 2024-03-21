@@ -1,13 +1,14 @@
 import React from 'react'
 import { Section } from '../../components'
 import './styles.scss'
-import { HomeTown, Introduce } from './components'
+import { College, HomeTown, Introduce } from './components'
 
 const Hero = () => {
   return (
     <>
       <Introduce />
       <HomeTown />
+      <College />
       {/* TESTING */}
       <Section className="hero">
         <div className="text-wrapper">
