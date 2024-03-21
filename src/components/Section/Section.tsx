@@ -4,12 +4,22 @@ import classNames from 'classnames'
 interface SectionProps {
   children?: React.ReactNode
   className?: string
+  id?: string
+  containerID?: string
 }
-const Section: React.FC<SectionProps> = ({ children, className }) => {
+const Section: React.FC<SectionProps> = ({
+  id,
+  children,
+  className,
+  containerID
+}) => {
   const cls = classNames('section-wrap', className)
+  const ctnCls = classNames('section-container')
   return (
-    <section className={cls}>
-      <div className="section-container">{children}</div>
+    <section className={cls} id={id}>
+      <div className={ctnCls} id={containerID}>
+        {children}
+      </div>
     </section>
   )
 }
