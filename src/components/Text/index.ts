@@ -1,3 +1,3 @@
-import Text from './Text'
+import Text, { TextGroup } from './Text'
 
-export default Text
+export { Text, TextGroup }
