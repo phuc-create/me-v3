@@ -30,12 +30,13 @@ interface TextGroupProps {
   className?: string
 }
 const Text = React.forwardRef<null, TextProps>(
-  ({ size = 1, variant, children, className }) => {
+  ({ size = 1, variant, children, className }, forwardRef) => {
     const cls = classNames('text', className, `poppins-${variant ?? '?'}`, {
       '--font-size': size + 'rem'
     })
     return (
       <span
+        ref={forwardRef}
         className={cls}
         style={{ '--font-size': size + 'rem' } as CSSProperties}
       >
@@ -46,9 +47,13 @@ const Text = React.forwardRef<null, TextProps>(
 )
 
 export const TextGroup = React.forwardRef<null, TextGroupProps>(
-  ({ children, className }) => {
+  ({ children, className }, forwardRef) => {
     const cls = classNames('text-group', className)
-    return <div className={cls}>{children}</div>
+    return (
+      <div ref={forwardRef} className={cls}>
+        {children}
+      </div>
+    )
   }
 )
 
