@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom'
 import { Header, Hero, Menu } from './pages'
 import { SmoothScroll } from './components'
 import './App.scss'
+import Playground from './Playground'
 
 function App() {
   const [active, setActive] = useState(false)
@@ -33,6 +34,7 @@ function App() {
           </Routes>
         </SmoothScroll>
       </main>
+      <Playground />
     </>
   )
 }

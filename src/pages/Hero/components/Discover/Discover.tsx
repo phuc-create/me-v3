@@ -14,17 +14,16 @@ const Discover = () => {
       <img className="paper-plane" src={PaperPlane} alt="show" />
       <TextGroup className="discover-text">
         <Text size={1.25}>
-          In August of 2018, I entered a new phase of my life.
-        </Text>
-        <Text size={1.25}>
-          I began my college journey in the bustling city.
-        </Text>
-        <Text size={1.25}>
-          Feeling both excited and nervous as I took my first steps onto campus,
-          eager to meet new people and broaden my horizons.
+          I didn't realize how small I was until I stepped outside.
         </Text>
         <br />
-        <Text size={1.25}>A life-changing experience.</Text>
+        <Text size={1.25}>
+          It's understandable to feel small and insignificant at times,
+        </Text>
+        <Text size={1.25}>
+          but remember that your unique qualities and strengths make you
+          valuable and important in your way.
+        </Text>
       </TextGroup>
     </Section>
   )
