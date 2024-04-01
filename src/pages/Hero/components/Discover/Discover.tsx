@@ -3,7 +3,7 @@ import { Section, Text, TextGroup } from '../../../../components'
 import { StarParallax } from './components'
 import Rada from '../../../../assets/rada.png'
 import Earth from '../../../../assets/earth.png'
-import PaperPlane from '../../../../assets/paper-plane.png'
+import PaperPlane from '../../../../assets/airplane.png'
 import './styles.scss'
 
 const Discover = () => {
