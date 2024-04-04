@@ -5,7 +5,8 @@ import {
   College,
   Discover,
   HomeTown,
-  Introduce
+  Introduce,
+  Mysterious
 } from './components'
 
 const Hero = () => {
@@ -16,6 +17,7 @@ const Hero = () => {
       <College />
       <Discover />
       <Collecting />
+      <Mysterious />
     </>
   )
 }

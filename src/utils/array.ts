@@ -70,4 +70,35 @@ const getMinCores = (start: Array<number>, end: Array<number>) => {
   return maxCores
 }
 
-export { binarySearch, insertionSort, maxSubArray, getMinCores }
+const minCores = (start: number[], end: number[]) => {
+  // Sắp xếp các tiến trình theo thời điểm bắt đầu
+  start.sort((a: number, b: number) => a - b)
+
+  // Khởi tạo số lượng lõi CPU
+  let count = 0
+
+  // Duyệt qua từng tiến trình
+  for (let i = 0; i < start.length; i++) {
+    let freeCore = false
+
+    // Tìm lõi CPU rảnh
+    for (let j = 0; j < count; j++) {
+      if (end[j] <= start[i]) {
+        freeCore = true
+        end[j] = Math.max(end[j], start[i] + (end[i] - start[i]))
+        break
+      }
+    }
+
+    // Nếu không có lõi CPU rảnh, tăng số lượng lõi CPU
+    if (!freeCore) {
+      count++
+      end[count - 1] = start[i] + (end[i] - start[i])
+    }
+  }
+
+  // Trả về số lượng lõi CPU tối thiểu
+  return count
+}
+
+export { binarySearch, insertionSort, maxSubArray, getMinCores, minCores }

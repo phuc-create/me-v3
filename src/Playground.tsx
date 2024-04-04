@@ -1,5 +1,5 @@
 import React from 'react'
-import { maxSubArray } from './utils/array'
+import { maxSubArray, minCores } from './utils/array'
 
 const Playground = () => {
   /**
@@ -19,8 +19,8 @@ const Playground = () => {
    */
 
   // console.log(insertionSort([11, 4, 6, 8, 100, 2])) // [2, 4, 6, 8, 11, 100]
-  // console.log(getMinCores([1, 3, 4], [3, 5, 6])) // return 2
-  // console.log(getMinCores([1, 2, 3], [3, 3, 5])) // return 3
+  console.log(minCores([1, 3, 4], [3, 5, 6])) // return 2
+  console.log(minCores([1, 2, 3], [3, 3, 5])) // return 3
   // console.log('max sub array:', maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4])) // return 6
   // console.log(
   //   binarySearch(

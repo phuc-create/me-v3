@@ -1,7 +1,6 @@
 import React from 'react'
 import { Section, Text, TextGroup } from '../../../../components'
 import Book from '../../../../assets/book.png'
-import NoteAndPen from '../../../../assets/note-book.png'
 import PaperPlane from '../../../../assets/paper-plane.png'
 import './styles.scss'
 
@@ -12,17 +11,13 @@ const Collecting = () => {
       <img className="airplane" src={PaperPlane} alt="show" />
       <TextGroup className="collecting-text">
         <Text size={1.25}>
-          In August of 2018, I entered a new phase of my life.
-        </Text>
-        <Text size={1.25}>
-          I began my college journey in the bustling city.
-        </Text>
-        <Text size={1.25}>
-          Feeling both excited and nervous as I took my first steps onto campus,
-          eager to meet new people and broaden my horizons.
+          Who knows? Maybe mysterious learning is the key to becoming a Pokemon
+          master! Gotta learn 'em all!
         </Text>
         <br />
-        <Text size={1.25}>A life-changing experience.</Text>
+        <Text size={1.25} variant="regular-italic">
+          the more you learn, the more you'll <b>'earn'</b>
+        </Text>
       </TextGroup>
     </Section>
   )
