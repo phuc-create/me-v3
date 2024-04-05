@@ -1,9 +1,9 @@
 import React from 'react'
 import './styles.scss'
-import { menu } from './constants'
 import { Button, WindowOverlay } from '../../components'
 import classNames from 'classnames'
 import { useNavigate } from 'react-router-dom'
+import { menu } from '../../constants'
 
 interface MenuProps {
   active: boolean

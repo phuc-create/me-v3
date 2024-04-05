@@ -1,23 +1,23 @@
 const menu = [
   {
     link: 'about-me',
-    tag: 'About Me'
+    tag: 'ABOUT ME'
   },
   {
     link: 'works',
-    tag: 'Works'
+    tag: 'WORKS'
   },
   {
     link: 'overview',
-    tag: 'Overview'
+    tag: 'OVERVIEW'
   },
   {
     link: 'my-story',
-    tag: 'My Story'
+    tag: 'MY STORY'
   },
   {
     link: 'contact',
-    tag: 'Contact'
+    tag: 'CONTACT'
   }
 ]
 
