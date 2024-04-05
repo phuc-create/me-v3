@@ -1,9 +1,12 @@
-import React, { useState } from 'react'
+import React, { lazy, Suspense, useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import { Header, Hero, Menu } from './pages'
 import { SmoothScroll } from './components'
 import './App.scss'
 import Playground from './Playground'
+import { Loader } from './loader'
+
+const HeroComponent = Loader(lazy(() => import('./pages/Hero')))
 
 function App() {
   const [active, setActive] = useState(false)
@@ -19,9 +22,10 @@ function App() {
         <SmoothScroll>
           {/* Routes nest inside one another. Nested route paths build upon
             parent route paths, and nested route elements render inside
-            parent route elements. See the note about <Outlet> below. */}
+          parent route elements. See the note about <Outlet> below. */}
           <Routes>
-            <Route path="/about-me" element={<Hero />} />
+            <Route path="/about-me" element={<HeroComponent />} />
+
             {/* <Route index element={<Home />} />
           <Route path="about" element={<About />} /> */}
             {/* <Route path="dashboard" element={<Dashboard />} /> */}

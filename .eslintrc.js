@@ -43,6 +43,7 @@ module.exports = {
     'prefer-promise-reject-errors': 'off',
     'standard/object-curly-even-spacing': 'off',
     'react/prop-types': 'off',
+    'react/display-name': 'warn',
     'react/no-unused-prop-types': 'off',
     'react/self-closing-comp': 'off',
     'react/jsx-boolean-value': 'off',
