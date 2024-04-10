@@ -27,22 +27,36 @@ const insertionSort = (arr: number[]): number[] => {
   return arr
 }
 
+const merge = (left: number[], right: number[]): number[] => {
+  const results: number[] = []
+  while (left.length > 0 && right.length > 0) {
+    if (left[0] < right[0]) {
+      const item = left.shift()
+      item ? results.push(item) : null
+    } else {
+      const item = right.shift()
+      item ? results.push(item) : null
+    }
+  }
+  return [...results, ...left, ...right]
+}
+
+const mergeSort = (arr: number[]): number[] => {
+  if (arr.length < 2) return arr
+  const mid = Math.ceil(arr.length / 2)
+
+  const leftArr = arr.slice(0, mid)
+  const rightArr = arr.slice(mid)
+
+  return merge(mergeSort(leftArr), mergeSort(rightArr))
+}
+
 const maxSubArray = (arr: number[]) => {
   let curMax = arr[0]
   let total = arr[0]
   for (let i = 1; i < arr.length; i++) {
     curMax = Math.max(arr[i], arr[i] + curMax)
     total = Math.max(curMax, total)
-    console.log(
-      'i: ',
-      i,
-      '|value: ',
-      arr[i],
-      '|curMax: ',
-      curMax,
-      '|total: ',
-      total
-    )
   }
   return total
 }
@@ -101,4 +115,11 @@ const minCores = (start: number[], end: number[]) => {
   return count
 }
 
-export { binarySearch, insertionSort, maxSubArray, getMinCores, minCores }
+export {
+  binarySearch,
+  insertionSort,
+  maxSubArray,
+  getMinCores,
+  minCores,
+  mergeSort
+}

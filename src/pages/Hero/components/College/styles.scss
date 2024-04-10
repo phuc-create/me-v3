@@ -6,6 +6,7 @@
   height: calc(100vh - 4.75rem);
   overflow: hidden;
   padding: 3rem 5rem 0 3rem;
+  position: relative;
 
   &-text {
     width: 340px;
@@ -22,12 +23,12 @@
     background-position: bottom;
   }
 
-  .paper-plane {
+  .paper-plane2 {
     position: absolute;
     width: 200px;
     top: 0%;
-    right: 5%;
-    transform-origin: center;
+    left: 75%;
+    // transform-origin: center;
 
     @include table {
       width: 285px;

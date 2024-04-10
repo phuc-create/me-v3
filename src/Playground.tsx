@@ -1,5 +1,5 @@
 import React from 'react'
-import { maxSubArray, minCores } from './utils/array'
+import { maxSubArray, mergeSort, minCores } from './utils/array'
 
 const Playground = () => {
   /**
@@ -28,6 +28,20 @@ const Playground = () => {
   //     Array.from({ length: 10000000 }).map((_, i) => i)
   //   )
   // ) // [2, 4, 6, 8, 11, 100]
+  console.log(
+    'array trước khi sort: ',
+    [
+      35, 65, 2, 54, 2, 34, 5, 345, 421, 6, 4543, 434, 475, 23, 5, 3, 467, 8, 9,
+      1112, 21, 4, 354645612, 1, 2312, 32, 3, 234, 998239
+    ]
+  )
+  console.log(
+    'sorted array: ',
+    mergeSort([
+      35, 65, 2, 54, 2, 34, 5, 345, 421, 6, 4543, 434, 475, 23, 5, 3, 467, 8, 9,
+      1112, 21, 4, 354645612, 1, 2312, 32, 3, 234, 998239
+    ])
+  )
   return <></>
 }
 
