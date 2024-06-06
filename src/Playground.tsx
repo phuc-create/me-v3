@@ -18,9 +18,27 @@ const Playground = () => {
   return 3
    */
 
+  const solution = (nums: number[][]): boolean => {
+    const count: { [key: number | string]: number } = {}
+
+    for (let i = 0; i < nums.length; i++) {
+      for (let j = 0; j < nums[i].length; j++) {
+        const element = nums[i][j] + ''
+        count[element] = count[element] ? count[element] + 1 : 1
+      }
+    }
+    return Object.values(count).every(item => item === nums[0].length)
+  }
+
+  console.log(
+    solution([
+      [1, 2, 3],
+      [3, 2, 1],
+      [3, 1, 2]
+    ])
+  )
   // console.log(insertionSort([11, 4, 6, 8, 100, 2])) // [2, 4, 6, 8, 11, 100]
-  console.log(minCores([1, 3, 4], [3, 5, 6])) // return 2
-  console.log(minCores([1, 2, 3], [3, 3, 5])) // return 3
+  // console.log(minCores([1, 2, 3], [3, 3, 5])) // return 3
   // console.log('max sub array:', maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4])) // return 6
   // console.log(
   //   binarySearch(
@@ -28,20 +46,20 @@ const Playground = () => {
   //     Array.from({ length: 10000000 }).map((_, i) => i)
   //   )
   // ) // [2, 4, 6, 8, 11, 100]
-  console.log(
-    'array trước khi sort: ',
-    [
-      35, 65, 2, 54, 2, 34, 5, 345, 421, 6, 4543, 434, 475, 23, 5, 3, 467, 8, 9,
-      1112, 21, 4, 354645612, 1, 2312, 32, 3, 234, 998239
-    ]
-  )
-  console.log(
-    'sorted array: ',
-    mergeSort([
-      35, 65, 2, 54, 2, 34, 5, 345, 421, 6, 4543, 434, 475, 23, 5, 3, 467, 8, 9,
-      1112, 21, 4, 354645612, 1, 2312, 32, 3, 234, 998239
-    ])
-  )
+  // console.log(
+  //   'array trước khi sort: ',
+  //   [
+  //     35, 65, 2, 54, 2, 34, 5, 345, 421, 6, 4543, 434, 475, 23, 5, 3, 467, 8, 9,
+  //     1112, 21, 4, 354645612, 1, 2312, 32, 3, 234, 998239
+  //   ]
+  // )
+  // console.log(
+  //   'sorted array: ',
+  //   mergeSort([
+  //     35, 65, 2, 54, 2, 34, 5, 345, 421, 6, 4543, 434, 475, 23, 5, 3, 467, 8, 9,
+  //     1112, 21, 4, 354645612, 1, 2312, 32, 3, 234, 998239
+  //   ])
+  // )
   return <></>
 }
 

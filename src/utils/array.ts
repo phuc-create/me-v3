@@ -63,14 +63,13 @@ const maxSubArray = (arr: number[]) => {
 
 const getMinCores = (start: Array<number>, end: Array<number>) => {
   // Sắp xếp các thời điểm kết thúc tăng dần
+  // this is practice about greedy algorithms
   const events = []
   for (let i = 0; i < start.length; i++) {
     events.push([start[i], 1]) // Thời điểm bắt đầu sự kiện
     events.push([end[i], -1]) // Thời điểm kết thúc sự kiện
   }
-  console.log(events)
   events.sort((a, b) => a[0] - b[0])
-  console.log(events)
 
   let coresNeeded = 0
   let maxCores = 0

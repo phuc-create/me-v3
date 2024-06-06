@@ -58,7 +58,7 @@ const College = () => {
       })
       return () => context.clear()
     },
-    { dependencies: [], scope: '.college' }
+    { dependencies: [], scope: collegeRef }
   )
 
   return (
