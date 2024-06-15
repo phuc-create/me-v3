@@ -1,5 +1,6 @@
 import BarIcon from './BarIcon'
 import Button from './Button'
+import FadeInWhenVisible from './FadeInWhenVisible'
 import Portal from './Portal'
 import Section from './Section'
 import SmoothScroll from './SmoothScroll'
@@ -14,5 +15,6 @@ export {
   WindowOverlay,
   SmoothScroll,
   Text,
-  TextGroup
+  TextGroup,
+  FadeInWhenVisible
 }

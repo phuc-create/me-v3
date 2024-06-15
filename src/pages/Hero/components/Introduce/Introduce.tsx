@@ -1,7 +1,6 @@
-import React, { useRef } from 'react'
-import { Section } from '../../../../components'
-import { useGSAP } from '@gsap/react'
-import { Back, gsap } from 'gsap'
+import React, { useEffect, useRef } from 'react'
+import { FadeInWhenVisible, Section } from '../../../../components'
+import { motion, useAnimationControls } from 'framer-motion'
 
 import './styles.scss'
 
@@ -9,61 +8,89 @@ const Introduce = () => {
   const heroRef = useRef(null)
   const textRef = useRef(null)
   const jobRef = useRef(null)
+  const controls = useAnimationControls()
 
-  useGSAP(
-    context => {
-      const tl = gsap.timeline({ paused: true })
-      tl.from(['.reveal-animate', '.animate-job'], {
-        duration: 1,
-        ease: Back.easeInOut,
-        yPercent: 130,
-        stagger: {
-          each: 0.05
-        }
-      })
-      tl.from('.word-animate', {
-        duration: 1,
-        ease: Back.easeInOut,
-        yPercent: 330,
-        stagger: {
-          each: 0.05
-        }
-      })
-      tl.from('.help-animate', {
-        duration: 1,
-        ease: Back.easeInOut,
-        yPercent: 200,
-        stagger: {
-          each: 0.05
-        }
-      })
-
-      tl.play()
-
-      return () => context.clear()
-    },
-    { scope: heroRef }
-  )
+  useEffect(() => {
+    controls.set(() => ({
+      y: '150px',
+      opacity: 0
+    }))
+    controls.start(i => ({
+      y: '0px',
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+        type: 'spring',
+        stiffness: 300,
+        delay: i * 0.2
+      }
+    }))
+  }, [])
 
   const jobTextAnimate = 'A Software Engineer'.split('').map((w, i) => (
-    <span className={`animate-job ${w === ' ' ? 'whitespace' : ''}`} key={i}>
-      {w}
-    </span>
-  ))
-
-  const iam = "I'm ".split('').map(w => (
-    <span
-      className={`prefix reveal-animate ${w === ' ' ? 'whitespace' : ''}`}
-      key={w}
+    <motion.span
+      className={`${w === ' ' ? 'whitespace' : ''}`}
+      key={i}
+      initial={{
+        y: '150px',
+        opacity: 0
+      }}
+      transition={{
+        duration: 0.5,
+        type: 'spring',
+        stiffness: 300,
+        delay: i * 0.1
+      }}
+      animate={{
+        y: '0px',
+        opacity: 1
+      }}
     >
       {w}
-    </span>
+    </motion.span>
   ))
 
-  const sam = 'SAM'.split('').map(w => (
-    <span className="name reveal-animate" key={w}>
+  const iam = "I'm ".split('').map((w, i) => (
+    <motion.div
+      className={`prefix ${w === ' ' ? 'whitespace' : ''}`}
+      key={w}
+      initial={{
+        y: '150px',
+        opacity: 0
+      }}
+      transition={{
+        duration: 0.5,
+        type: 'spring',
+        stiffness: 300,
+        delay: i * 0.1
+      }}
+      animate={{
+        y: '0px',
+        opacity: 1
+      }}
+    >
       {w}
-    </span>
+    </motion.div>
+  ))
+
+  const sam = 'SAM'.split('').map((w, i) => (
+    <motion.div
+      className="name"
+      key={w}
+      initial={{
+        scaleY: 2,
+        y: '-150px',
+        opacity: 0
+      }}
+      transition={{
+        type: 'spring',
+        stiffness: 300,
+        delay: i * 0.1
+      }}
+      animate={{ scaleY: 1, y: '0px', opacity: 1 }}
+    >
+      {w}
+    </motion.div>
   ))
 
   const pharagraph =
@@ -83,17 +110,34 @@ const Introduce = () => {
           {w}
         </span>
       ))
+
   return (
     <Section className="hero" ref={heroRef}>
       <div className="text-wrapper" ref={textRef}>
-        <div className="text-wrapper-group">
-          {iam} {sam}
-        </div>
-        <div className="job" ref={jobRef}>
-          {jobTextAnimate}
-        </div>
-        <div className="pharagraph">{pharagraph}</div>
-        <div className="poppins-extralight-italic help-text">{helpText}</div>
+        <FadeInWhenVisible>
+          <motion.div className="text-wrapper-group">
+            {iam}
+            {sam}
+          </motion.div>
+          <motion.div
+            className="job"
+            ref={jobRef}
+            animate={controls}
+            custom={6}
+          >
+            {jobTextAnimate}
+          </motion.div>
+          <motion.div className="pharagraph" animate={controls} custom={2}>
+            {pharagraph}
+          </motion.div>
+          <motion.div
+            className="poppins-extralight-italic help-text"
+            animate={controls}
+            custom={4}
+          >
+            {helpText}
+          </motion.div>
+        </FadeInWhenVisible>
       </div>
     </Section>
   )
