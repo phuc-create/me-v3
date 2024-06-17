@@ -1,95 +1,124 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { Section, Text, TextGroup } from '../../../../components'
 // import City from '../../../../assets/city.png'
 import PaperPlane from '../../../../assets/paper-plane.png'
 import Building from '../../../../assets/building.png'
-import { Sine, gsap } from 'gsap'
-import { useGSAP } from '@gsap/react'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { motion, useAnimationControls, useInView } from 'framer-motion'
 import './styles.scss'
-
-gsap.registerPlugin(ScrollTrigger)
 
 const College = () => {
   const collegeRef = useRef(null)
   const planeRef = useRef(null)
-  useGSAP(
-    context => {
-      // animate building
-      gsap.from('.building', {
-        y: '-120%',
-        opacity: 0,
-        duration: 1,
-        ease: Sine.easeInOut,
-        // stagger: 0.05,
-        scrollTrigger: {
-          trigger: '.building',
-          // markers: true,
-          start: 'top 85%',
-          end: 'top 95%',
-          scrub: 1,
-          toggleActions: 'restart none none none'
-        }
-      })
+  const textRef = useRef(null)
+  const isInView = useInView(textRef)
+  const textControls = useAnimationControls()
 
-      // animate airplane
-      gsap.from(planeRef.current, {
-        x: '-100%',
-        opacity: 0,
-        duration: 1,
-        ease: Sine.easeInOut,
-        stagger: 0.05,
-        scrollTrigger: {
-          trigger: planeRef.current,
-          // markers: true,
-          start: 'top center',
-          end: 'top center',
-          scrub: 1,
-          toggleActions: 'restart none none none'
+  useEffect(() => {
+    if (isInView) {
+      textControls.start(i => ({
+        x: '0px',
+        opacity: 1,
+        transition: {
+          type: 'spring',
+          delay: i * 0.4
         }
-      })
-
-      gsap.to('.paper-plane2', {
-        duration: 2,
-        repeat: -1,
-        yoyo: true,
-        y: -25,
-        ease: Sine.easeInOut
-      })
-      return () => context.clear()
-    },
-    { dependencies: [], scope: collegeRef }
-  )
+      }))
+    }
+  }, [isInView])
 
   return (
     <Section
       className="college"
       mainChildren={
         <>
-          <img className="building" src={Building} alt="city" />
-          <img
+          <motion.img
+            className="building"
+            src={Building}
+            alt="city"
+            variants={{
+              hidden: { opacity: 0, y: '400px' },
+              visible: { opacity: 1, y: '0px' }
+            }}
+            initial="hidden"
+            whileInView="visible"
+            transition={{
+              y: { type: 'spring', duration: 0.5, stiffness: 200 }
+            }}
+          />
+          <motion.img
             className="paper-plane2"
             ref={planeRef}
             src={PaperPlane}
             alt="show"
+            variants={{
+              hidden: { opacity: 0, x: '-200px', y: '-40px' },
+              visible: { opacity: 1, x: '0px', y: '0px' }
+            }}
+            initial="hidden"
+            whileInView="visible"
+            transition={{
+              type: 'spring',
+              x: { type: 'spring', duration: 0.5 },
+              y: {
+                duration: 2,
+                repeat: Infinity,
+                repeatType: 'reverse'
+              }
+            }}
           />
         </>
       }
       ref={collegeRef}
     >
-      <TextGroup className="college-text">
-        <Text size={1.25}>
-          In August of 2018, I entered a new phase of my life.
-        </Text>
-        <Text size={1.25}>
-          I began my college journey in the bustling city.
-        </Text>
-        <Text size={1.25}>
-          Feeling both excited and nervous as I took my first steps onto campus,
-          eager to meet new people and broaden my horizons.
-        </Text>
+      <TextGroup className="college-text" ref={textRef}>
+        <motion.div
+          initial={{
+            x: '-200px',
+            opacity: 0
+          }}
+          animate={textControls}
+          custom={1}
+        >
+          <Text size={1.25}>
+            In August of 2018, I entered a new phase of my life.
+          </Text>
+        </motion.div>
+        <motion.div
+          initial={{
+            x: '-200px',
+            opacity: 0
+          }}
+          animate={textControls}
+          custom={2}
+        >
+          <Text size={1.25}>
+            I began my college journey in the bustling city.
+          </Text>
+        </motion.div>
+        <motion.div
+          initial={{
+            x: '-200px',
+            opacity: 0
+          }}
+          animate={textControls}
+          custom={3}
+        >
+          <Text size={1.25}>
+            Feeling both excited and nervous as I took my first steps onto
+            campus, eager to meet new people and broaden my horizons.
+          </Text>
+        </motion.div>
         <br />
-        <Text size={1.25}>A life-changing experience.</Text>
+        <motion.div
+          initial={{
+            x: '-200px',
+            opacity: 0
+          }}
+          animate={textControls}
+          custom={4}
+        >
+          <Text size={1.25}>A life-changing experience.</Text>
+        </motion.div>
       </TextGroup>
     </Section>
   )
