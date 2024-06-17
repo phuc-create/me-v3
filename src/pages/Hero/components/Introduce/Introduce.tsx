@@ -22,7 +22,7 @@ const Introduce = () => {
           duration: 0.5,
           type: 'spring',
           stiffness: 300,
-          delay: i * 0.2
+          delay: i * 0.4
         }
       }))
       controlsFooter.start(i => ({
