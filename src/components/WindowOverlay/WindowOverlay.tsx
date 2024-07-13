@@ -12,7 +12,7 @@ const WindowOverlay: React.FC<WindowOverlayProps> = ({ active }) => {
   const cn = useMemo(() => {
     return `overlay ${active ? 'open' : ''}`
   }, [active])
-
+  console.log("test interactive")
   return (
     <div className={overlay}>
       <div className={cn}></div>
