@@ -25,7 +25,7 @@ const Button = React.forwardRef<unknown, ButtonProps>((props, forwardedRef) => {
   const renderNormal = () => {
     return (
       <button
-        className="button-container"
+        className={'button-container ' + props.className}
         onClick={onClick}
         ref={() => forwardedRef}
       >
