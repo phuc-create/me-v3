@@ -6,6 +6,7 @@ import './App.scss'
 import Playground from './Playground'
 import { Loader } from './loader'
 import Contact from './pages/Contact/Contact'
+import SampleTablePage from './pages/SampleTablePage'
 
 const HeroComponent = Loader(lazy(() => import('./pages/Hero')))
 
@@ -20,25 +21,26 @@ function App() {
 
       <main className="main">
         <div className="placeholder"></div>
-        <SmoothScroll>
-          {/* Routes nest inside one another. Nested route paths build upon
+        {/* <SmoothScroll> */}
+        {/* Routes nest inside one another. Nested route paths build upon
             parent route paths, and nested route elements render inside
           parent route elements. See the note about <Outlet> below. */}
-          <Routes>
-            <Route path="/about-me" element={<HeroComponent />} />
-            <Route path="/contact" element={<Contact />} />
+        <Routes>
+          <Route path="/about-me" element={<HeroComponent />} />
+          <Route path="/" element={<SampleTablePage />} />
+          <Route path="/contact" element={<Contact />} />
 
-            {/* <Route index element={<Home />} />
+          {/* <Route index element={<Home />} />
           <Route path="about" element={<About />} /> */}
-            {/* <Route path="dashboard" element={<Dashboard />} /> */}
+          {/* <Route path="dashboard" element={<Dashboard />} /> */}
 
-            {/* Using path="*"" means "match anything", so this route
+          {/* Using path="*"" means "match anything", so this route
                 acts like a catch-all for URLs that we don't have explicit
                 routes for. */}
-            {/* <Route path="*" element={<NoMatch />} /> */}
-            {/* </Route> */}
-          </Routes>
-        </SmoothScroll>
+          {/* <Route path="*" element={<NoMatch />} /> */}
+          {/* </Route> */}
+        </Routes>
+        {/* </SmoothScroll> */}
       </main>
       <Playground />
     </>
