@@ -5,6 +5,7 @@ import { SmoothScroll } from './components'
 import './App.scss'
 import Playground from './Playground'
 import { Loader } from './loader'
+import Contact from './pages/Contact/Contact'
 
 const HeroComponent = Loader(lazy(() => import('./pages/Hero')))
 
@@ -25,6 +26,7 @@ function App() {
           parent route elements. See the note about <Outlet> below. */}
           <Routes>
             <Route path="/about-me" element={<HeroComponent />} />
+            <Route path="/contact" element={<Contact />} />
 
             {/* <Route index element={<Home />} />
           <Route path="about" element={<About />} /> */}
