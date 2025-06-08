@@ -10,7 +10,9 @@ const Introduction = () => {
       <Image
         priority
         className="ring-border ring-offset-background bg-background absolute -top-[75px] left-[2px] h-[156px] w-[156px] rounded-full bg-cover object-cover ring-1 ring-offset-2"
-        src="/assets/IMG_0192.JPG"
+        // src="/assets/IMG_1845.WEBP"
+        src="/assets/IMG_3746.png"
+        // src="/assets/ChatGPT Image 22_34_16 8 thg 6, 2025.png"
         alt={'nah Bro!'}
         width={200}
         height={200}

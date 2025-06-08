@@ -40,9 +40,9 @@ export default function Home() {
       <SectionFlat className="mt-2 border-y">
         <Overview />
       </SectionFlat>
-      <SectionFlat sidePattern className="mt-2 border-y">
-        <LongContent />
-      </SectionFlat>
+      {/* <SectionFlat sidePattern className="mt-2 border-y"> */}
+      {/* <LongContent /> */}
+      {/* </SectionFlat> */}
     </div>
   )
 }
