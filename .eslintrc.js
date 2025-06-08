@@ -30,7 +30,13 @@ module.exports = {
     sourceType: 'module'
   },
   parser: '@typescript-eslint/parser',
-  plugins: ['react', '@typescript-eslint', 'prettier', 'eslint-plugin-prettier'],
+  plugins: [
+    'react',
+    '@typescript-eslint',
+    'prettier',
+    'eslint-plugin-prettier'
+  ],
+  ignorePatterns: ['components/ui/*'], // ignore lint for all files in the /components folder
   rules: {
     'react/no-unescaped-entities': 'off',
     'template-curly-spacing': 'off',
