@@ -1,8 +1,17 @@
-"use client"
+'use client'
 import React, { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
+import { cn } from '../../lib/utils'
 
-const RotateWords = ({ words = ["There you go!", "Dog Lover"], delay = 2000 }: { words: string[], delay?: number }) => {
+const RotateWords = ({
+  words = ['There you go!', 'Dog Lover'],
+  delay = 2000,
+  className
+}: {
+  words: string[]
+  delay?: number
+  className: string
+}) => {
   const [current, setCurrent] = useState(0)
 
   useEffect(() => {
@@ -13,8 +22,13 @@ const RotateWords = ({ words = ["There you go!", "Dog Lover"], delay = 2000 }: {
   }, [])
 
   return (
-    <div className='flex justify-start pl-2 items-center h-1/2 text-foreground font-mono leading-none'>
-      <AnimatePresence mode='wait'>
+    <div
+      className={cn(
+        'text-foreground flex items-center justify-start font-mono',
+        className
+      )}
+    >
+      <AnimatePresence mode="wait">
         <motion.div
           key={words[current]}
           initial={{ opacity: 0, y: 10 }}

@@ -1,11 +1,12 @@
 import React from 'react'
+import { ModeSwitcher } from '../../components/mode-switcher'
 interface HeaderProps { }
 
 const links = ['Home', 'Contact', 'About']
 
 const Header = () => {
   return (
-    <div className="flex items-center justify-end gap-4 p-2 z-50">
+    <div className="z-50 flex items-center justify-end gap-4 px-2">
       {links.map(link => {
         return (
           <a
@@ -16,6 +17,7 @@ const Header = () => {
           </a>
         )
       })}
+      <ModeSwitcher />
       {/* <a className="text-lg font-semibold">Contact</a>
       <a className="text-lg font-semibold">About</a> */}
     </div>
