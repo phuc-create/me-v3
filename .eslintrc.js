@@ -4,10 +4,9 @@ module.exports = {
     es2021: true
   },
   extends: [
-    // 'standard-with-typescript',
-    'eslint:recommended',
+    'next',
+    'next/core-web-vitals',
     'plugin:@typescript-eslint/recommended',
-    'plugin:react/recommended',
     'prettier'
   ],
   settings: {
@@ -30,7 +29,8 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module'
   },
-  plugins: ['react', '@typescript-eslint', 'prettier'],
+  parser: '@typescript-eslint/parser',
+  plugins: ['react', '@typescript-eslint', 'prettier', 'eslint-plugin-prettier'],
   rules: {
     'react/no-unescaped-entities': 'off',
     'template-curly-spacing': 'off',
