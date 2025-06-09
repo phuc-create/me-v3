@@ -7,6 +7,7 @@ import Placeholder from '@v3/features/profile/placeholder'
 import { BgPattern } from '../features/profile/bg-pattern'
 import Introduction from '../features/profile/introduction'
 import CodeReveal from '../components/code-reveal'
+import ChatInterface from '../components/chat-interface'
 
 export default function Home() {
   return (
@@ -40,9 +41,10 @@ export default function Home() {
       <SectionFlat className="mt-2 border-y">
         <Overview />
       </SectionFlat>
-      {/* <SectionFlat sidePattern className="mt-2 border-y"> */}
-      {/* <LongContent /> */}
-      {/* </SectionFlat> */}
+      <Placeholder />
+      <SectionFlat sidePattern className="mt-2 border-y">
+        <ChatInterface />
+      </SectionFlat>
     </div>
   )
 }
