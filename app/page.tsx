@@ -42,7 +42,7 @@ export default function Home() {
         <Overview />
       </SectionFlat>
       <Placeholder />
-      <SectionFlat sidePattern className="mt-2 border-y">
+      <SectionFlat className="mt-2 border-y">
         <ChatInterface />
       </SectionFlat>
     </div>
