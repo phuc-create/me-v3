@@ -8,6 +8,7 @@ import { BgPattern } from '../features/profile/bg-pattern'
 import Introduction from '../features/profile/introduction'
 import CodeReveal from '../components/code-reveal'
 import ChatInterface from '../components/chat-interface'
+import Stacks from '../features/profile/stacks'
 
 export default function Home() {
   return (
@@ -33,17 +34,24 @@ export default function Home() {
       </SectionFlat>
 
       <Placeholder />
-
       <SectionFlat sidePattern className="h-4 overflow-hidden border-y">
         <BgPattern className="h-4" />
       </SectionFlat>
-
-      <SectionFlat className="mt-2 border-y">
+      <SectionFlat>
+        <span className="px-4 text-2xl font-bold">About me</span>
+      </SectionFlat>
+      <SectionFlat className="border-y">
         <Overview />
       </SectionFlat>
       <Placeholder />
       <SectionFlat className="mt-2 border-y">
         <ChatInterface />
+      </SectionFlat>
+      <SectionFlat className="mt-2 border-y">
+        <span className="px-4 text-2xl font-bold">Stacks</span>
+      </SectionFlat>
+      <SectionFlat>
+        <Stacks />
       </SectionFlat>
     </div>
   )

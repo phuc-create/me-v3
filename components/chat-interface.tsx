@@ -109,8 +109,8 @@ export default function ChatInterface() {
     {
       role: 'user',
       contents: [
-        'I`m born and bred in Dak Lak ٩(◕‿◕｡)۶\nLiving in Ho Chi Minh City now (°◡°♡)\nIn progress learing Golang (๑•̀ㅂ•́)و\nVide coding on Typescript (◍•ᴗ•◍)\nFront-end Developer (☆▽☆).',
-        "let's connect."
+        '- I`m born and bred in Dak Lak ٩(◕‿◕｡)۶\n- Living in Ho Chi Minh City now (°◡°♡)\n- In progress learing Golang (๑•̀ㅂ•́)و\n- Vide coding on Typescript (◍•ᴗ•◍)\n- Front-end Developer (☆▽☆).',
+        "Let's connect."
       ],
       timestamp: '4:08:37 PM'
     }
