@@ -62,14 +62,14 @@ const HeroBigBG = () => {
     <>
       <div className="relative z-0 h-[400px] w-full">
         <div className="absolute inset-0">
-          <div className="relative h-full w-full bg-black [&>div]:absolute [&>div]:inset-0 [&>div]:bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] [&>div]:bg-[size:14px_14px]">
+          <div className="relative h-full w-full bg-white dark:bg-black [&>div]:absolute [&>div]:inset-0 [&>div]:bg-[linear-gradient(to_right,#cccccc_1px,transparent_1px),linear-gradient(to_bottom,#cccccc_1px,transparent_1px)] [&>div]:bg-[size:14px_14px] dark:[&>div]:bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)]">
             <div></div>
           </div>
         </div>
 
         <div className="relative flex h-full flex-col items-center justify-center px-4">
           <div className="max-w-3xl text-center">
-            <h1 className="mb-8 flex flex-col font-sans text-4xl tracking-tight text-white sm:text-6xl lg:text-5xl">
+            <h1 className="t mb-8 flex flex-col font-sans text-4xl tracking-tight sm:text-6xl lg:text-5xl">
               Hi...
               <CodeReveal code="text-4xl font-sans tracking-tight text-white" />
             </h1>
