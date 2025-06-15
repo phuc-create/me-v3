@@ -30,7 +30,7 @@ const Introduction = () => {
           className="absolute -top-6 left-2"
           code="text-3xl font-sans tracking-tight"
         />
-        <h1 className="flex grow scroll-m-20 items-center gap-2 border-b pl-2 font-sans text-3xl tracking-tight">
+        <h1 className="flex grow scroll-m-20 items-center gap-2 border-b pl-2 text-3xl tracking-tight">
           Nguyen Huu Phuc (Sam)
           <svg
             className="me-2 h-5 w-5 shrink-0 text-green-500 dark:text-green-400"

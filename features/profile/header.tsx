@@ -11,7 +11,7 @@ const Header = () => {
         return (
           <a
             key={link}
-            className="text-foreground hover:text-foreground/80 cursor-pointer font-mono text-sm font-medium transition-all duration-300"
+            className="text-foreground hover:text-foreground/80 cursor-pointer text-base font-medium transition-all duration-300"
           >
             {link}
           </a>

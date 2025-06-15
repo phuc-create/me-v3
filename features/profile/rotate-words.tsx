@@ -24,7 +24,7 @@ const RotateWords = ({
   return (
     <div
       className={cn(
-        'text-foreground flex items-center justify-start font-mono',
+        'text-foreground flex items-center justify-start',
         className
       )}
     >

@@ -9,10 +9,11 @@ import Introduction from '../features/profile/introduction'
 import CodeReveal from '../components/code-reveal'
 import ChatInterface from '../components/chat-interface'
 import Stacks from '../features/profile/stacks'
+import Experiences from '../features/profile/experiences'
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen items-center justify-items-center font-[family-name:var(--font-geist-sans)]">
+    <div className="relative min-h-screen items-center justify-items-center font-josefin">
       <Placeholder className="fixed"></Placeholder>
 
       <SectionFlat
@@ -50,8 +51,13 @@ export default function Home() {
       <SectionFlat className="mt-2 border-y">
         <span className="px-4 text-2xl font-bold">Stacks</span>
       </SectionFlat>
-      <SectionFlat>
+      <SectionFlat className="border-b" sidePattern>
         <Stacks />
+      </SectionFlat>
+      <Placeholder />
+      <SectionFlat></SectionFlat>
+      <SectionFlat className="border-y">
+        <Experiences />
       </SectionFlat>
     </div>
   )

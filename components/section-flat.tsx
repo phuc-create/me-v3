@@ -17,7 +17,7 @@ const SectionFlat: React.FC<SectionFlatProps> = ({
       <div
         className={cn('bg-background grow border-r', sidePattern && pattern)}
       ></div>
-      <div className="mx-auto w-[768px]">{children}</div>
+      <div className="mx-auto w-[980px]">{children}</div>
       <div
         className={cn('bg-background grow border-l', sidePattern && pattern)}
       ></div>

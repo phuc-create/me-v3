@@ -25,8 +25,8 @@ const AgentMessage = ({ message }: { message: Message }) => {
       </Avatar>
       <div className="space-y-1">
         <div className="flex items-center gap-2">
-          <span className="text-xs font-medium">Lovely Agent</span>
-          <span className="text-muted-foreground text-xs">
+          <span className="text-sm font-medium">Lovely Agent</span>
+          <span className="text-muted-foreground text-sm">
             {message.timestamp}
           </span>
         </div>
@@ -36,7 +36,7 @@ const AgentMessage = ({ message }: { message: Message }) => {
             className="group flex items-center justify-center gap-1.5"
           >
             <div className="bg-muted/50 flex flex-col rounded-lg">
-              <p className="border-b p-2 text-sm whitespace-pre-wrap">
+              <p className="border-b p-2 text-base whitespace-pre-wrap">
                 {content}
               </p>
               <CodeReveal code="text-sm whitespace-pre-wrap" className="px-2" />
@@ -81,14 +81,14 @@ const UserMessage = ({ message }: { message: Message }) => {
     <div className="ml-auto flex max-w-[80%] justify-end gap-2">
       <div className="flex flex-col items-end space-y-1">
         <div className="flex items-center justify-end gap-2">
-          <span className="text-xs font-medium">Nguyen Huu Phuc (Sam)</span>
-          <span className="text-muted-foreground text-xs">
+          <span className="text-sm font-medium">Nguyen Huu Phuc (Sam)</span>
+          <span className="text-muted-foreground text-sm">
             {message.timestamp}
           </span>
         </div>
         {message.contents.map((content, indez) => (
           <div key={indez} className="bg-muted/50 flex flex-col rounded-lg">
-            <p className="border-b p-2 text-sm whitespace-pre-wrap">
+            <p className="border-b p-2 text-base whitespace-pre-wrap">
               {content}
             </p>
             <CodeReveal code="text-sm whitespace-pre-wrap" className="px-2" />
