@@ -4,13 +4,13 @@ FROM node:latest AS builder
 
 WORKDIR /me-v3/
 
-COPY package.json /me-v3/
-COPY public/ /me-v3/public
-COPY app/ /me-v3/
+# COPY package.json /me-v3/
+# COPY public/ /me-v3/public
+# COPY app/ /me-v3/
+COPY . .
 
 RUN npm install
 
-COPY . .
 
 RUN npm run build
 
