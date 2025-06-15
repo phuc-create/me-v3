@@ -6,7 +6,7 @@ WORKDIR /me-v3/
 
 COPY package.json /me-v3/
 COPY public/ /me-v3/public
-COPY src/ /me-v3/src
+COPY app/ /me-v3/
 
 RUN npm install
 
