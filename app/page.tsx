@@ -57,10 +57,14 @@ export default function Home() {
         </SectionFlat>
         <Placeholder />
         <SectionFlat></SectionFlat>
-        <SectionFlat className="border-y">
+        <SectionFlat sideBorder={false}>
           <Experiences />
         </SectionFlat>
-        <SectionFlat className="border-y"></SectionFlat>
+        <Placeholder className="mb-3" />
+        <SectionFlat className="mt-2 border-y">
+          <span className="px-4 text-2xl font-bold">Projects</span>
+        </SectionFlat>
+        <SectionFlat sideBorder={false}>Projects</SectionFlat>
       </div>
       <WelcomeAnimation />
     </>

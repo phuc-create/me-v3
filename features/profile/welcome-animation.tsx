@@ -1,6 +1,7 @@
 'use client'
 import React, { useEffect, useRef, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { cn } from '../../lib/utils'
 
 const WelcomeAnimation = () => {
   const greetingRef = useRef<NodeJS.Timeout | null>(null)
@@ -17,16 +18,26 @@ const WelcomeAnimation = () => {
 
   useEffect(() => {
     if (!shouldAnimate) return
+    let backdropTimeout: NodeJS.Timeout
     const timeout = setTimeout(() => {
       setShouldAnimate(false)
-      setShowBackDrop(false)
+      backdropTimeout = setTimeout(() => {
+        setShowBackDrop(false)
+      }, 1000)
     }, 2000)
-    return () => clearTimeout(timeout)
+    return () => {
+      clearTimeout(backdropTimeout)
+      clearTimeout(timeout)
+    }
   }, [shouldAnimate])
+
+  if (!shouldAnimate) return null
 
   return (
     <motion.div
-      className="bg-background fixed top-0 left-0 z-50 flex h-[100vh] w-[100vw] items-center justify-center overflow-hidden"
+      className={cn(
+        'bg-background fixed top-0 left-0 z-50 flex h-[100vh] w-[100vw] items-center justify-center overflow-hidden'
+      )}
       initial={{ opacity: 1, y: 0 }}
       animate={{ opacity: 0, y: 10 }}
       exit={{ opacity: 1, y: 10 }}
