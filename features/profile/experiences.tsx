@@ -1,7 +1,7 @@
 import React from 'react'
 import { cn } from '../../lib/utils'
 import { Josefin_Sans } from 'next/font/google'
-import { NotebookIcon, NotebookText, School } from 'lucide-react'
+import { NotebookText, School } from 'lucide-react'
 
 const josefin = Josefin_Sans({
   weight: '400',
@@ -72,7 +72,8 @@ const educations = [
       'Graduated with GPA 2.7 (that was a crazy moment ٩(◕‿◕｡)۶)',
       'Thanks for everything that college brought to me, filled with new friendships and a journey of self-discovery after three years.'
     ],
-    since: '2018 - 2022'
+    since: '2018 - 2022',
+    current: false
   },
   {
     id: 3,
@@ -190,7 +191,7 @@ const Experiences = () => {
                       'bg-background block h-4 w-4 origin-bottom rotate-45 border',
                       'before:bg-background before:absolute before:top-1/2 before:left-1/2 before:h-2.5 before:w-2.5 before:-translate-1/2 before:border',
                       'after:absolute after:top-1/2 after:left-1/2 after:h-1 after:w-1 after:-translate-1/2 after:border',
-                      exp.current
+                      exp?.current
                         ? 'before:border-green-500 after:animate-ping after:bg-green-700'
                         : 'after:border after:border-gray-900 after:bg-gray-600'
                     )}
