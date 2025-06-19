@@ -9,26 +9,6 @@ const josefin = Josefin_Sans({
 })
 
 const experiences = [
-  // {
-  //   id: 21,
-  //   company: 'Decotaion Dream',
-  //   role: 'Fullstack Software Developer',
-  //   tasks: [
-  //     'Find out optimal solution for better UI/UX based on Figma design.',
-  //     'Resolve UI styling issues, component architecture, and apply design pattern into building re-usable component.'
-  //   ],
-  //   since: '2021 - 2024'
-  // },
-  // {
-  //   id: 3,
-  //   company: 'Biz',
-  //   role: 'Fullstack Software Developer',
-  //   tasks: [
-  //     'Find out optimal solution for better UI/UX based on Figma design.',
-  //     'Resolve UI styling issues, component architecture, and apply design pattern into building re-usable component.'
-  //   ],
-  //   since: '2021 - 2024'
-  // },
   {
     id: 442,
     company: (

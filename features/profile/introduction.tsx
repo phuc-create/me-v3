@@ -52,7 +52,7 @@ const Introduction = () => {
             'Software Developer',
             'Front-end Developer',
             'Dog Lover',
-            'Content Chaser',
+            'CEO (Chief Entertainment Officer)',
             'Introverted'
           ]}
           delay={4000}

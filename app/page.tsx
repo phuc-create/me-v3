@@ -10,10 +10,11 @@ import Stacks from '../features/profile/stacks'
 import Experiences from '../features/profile/experiences'
 import WelcomeAnimation from '../features/profile/welcome-animation'
 import Image from 'next/image'
+import { ScrollArea } from '@v3/components/ui/scroll-area'
 
 export default function Home() {
   return (
-    <>
+    <ScrollArea>
       <div className="font-josefin relative min-h-screen items-center justify-items-center">
         <Placeholder className="fixed"></Placeholder>
 
@@ -67,7 +68,7 @@ export default function Home() {
         <SectionFlat sideBorder={false}>Projects</SectionFlat>
       </div>
       <WelcomeAnimation />
-    </>
+    </ScrollArea>
   )
 }
 
