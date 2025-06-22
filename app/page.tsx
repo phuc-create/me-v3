@@ -15,7 +15,7 @@ import Projects from '../features/profile/projects'
 
 export default function Home() {
   return (
-    <ScrollArea>
+    <>
       <div className="font-josefin relative min-h-screen items-center justify-items-center">
         <Placeholder className="fixed"></Placeholder>
 
@@ -66,12 +66,13 @@ export default function Home() {
         <SectionFlat className="mt-2 border-y">
           <span className="px-4 text-2xl font-bold">Projects</span>
         </SectionFlat>
+        {/* <Placeholder /> */}
         <SectionFlat>
           <Projects />
         </SectionFlat>
       </div>
       {/* <WelcomeAnimation /> */}
-    </ScrollArea>
+    </>
   )
 }
 

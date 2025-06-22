@@ -153,7 +153,7 @@ const Stacks = () => {
           className={`${tech.bgColor} z-20 cursor-pointer transition-colors`}
         >
           <Tooltip>
-            <TooltipTrigger className="flex items-center gap-1.5 px-3 py-2 text-sm font-bold">
+            <TooltipTrigger className="flex items-start gap-1.5 px-3 py-1 text-sm font-bold">
               <Image
                 src={tech.img || '/placeholder.svg'}
                 alt={`${tech.name} icon`}
