@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono, Josefin_Sans } from 'next/font/google'
 import './globals.css'
+import './glitch.scss'
 import { ThemeProvider } from '../components/theme-provider'
 import { CSSProperties } from 'react'
 
@@ -15,7 +16,7 @@ const geistMono = Geist_Mono({
 })
 const josefin = Josefin_Sans({
   variable: '--font-josefin',
-  subsets: ['latin'],
+  subsets: ['latin']
 })
 
 export const metadata: Metadata = {

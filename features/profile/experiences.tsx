@@ -104,9 +104,9 @@ const Experiences = () => {
         <Icon className="-top-3 -right-3" />
         <Icon className="-bottom-3 -left-3" />
         <Icon className="-right-3 -bottom-3" />
-        <h2 className="flex items-start gap-1.5 pt-2 pl-4 text-2xl font-bold">
+        <h2 className="flex items-center gap-1.5 pt-2 pl-4 text-2xl font-bold">
           Work Experiences
-          <NotebookText></NotebookText>
+          <NotebookText className="h-4 w-4" />
         </h2>
         <div className="relative grid grid-cols-1 gap-6 gap-y-8 p-4 md:grid-cols-2 lg:grid-cols-3">
           {/* item */}
@@ -155,8 +155,8 @@ const Experiences = () => {
             )
           })}
         </div>
-        <h2 className="flex items-start gap-1.5 pt-2 pl-4 text-2xl font-bold">
-          Educations <School />
+        <h2 className="flex items-center gap-1.5 pt-2 pl-4 text-2xl font-bold">
+          Educations <School className="h-4 w-4" />
         </h2>
         <div className="relative grid grid-cols-1 gap-6 gap-y-8 p-4 md:grid-cols-2 lg:grid-cols-3">
           {/* item */}

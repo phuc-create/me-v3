@@ -11,6 +11,7 @@ import Experiences from '../features/profile/experiences'
 import WelcomeAnimation from '../features/profile/welcome-animation'
 import Image from 'next/image'
 import { ScrollArea } from '@v3/components/ui/scroll-area'
+import Projects from '../features/profile/projects'
 
 export default function Home() {
   return (
@@ -65,9 +66,11 @@ export default function Home() {
         <SectionFlat className="mt-2 border-y">
           <span className="px-4 text-2xl font-bold">Projects</span>
         </SectionFlat>
-        <SectionFlat sideBorder={false}>Projects</SectionFlat>
+        <SectionFlat>
+          <Projects />
+        </SectionFlat>
       </div>
-      <WelcomeAnimation />
+      {/* <WelcomeAnimation /> */}
     </ScrollArea>
   )
 }

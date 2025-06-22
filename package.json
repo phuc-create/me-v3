@@ -44,6 +44,7 @@
     "eslint-plugin-standard": "^5.0.0",
     "prettier": "^3.5.3",
     "prettier-plugin-tailwindcss": "^0.6.12",
+    "sass": "^1.89.2",
     "tailwindcss": "^4",
     "tw-animate-css": "^1.3.4",
     "typescript": "^5",
