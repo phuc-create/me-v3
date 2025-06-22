@@ -4,6 +4,10 @@ import './globals.css'
 import './glitch.scss'
 import { ThemeProvider } from '../components/theme-provider'
 import { CSSProperties } from 'react'
+import Placeholder from '../features/profile/placeholder'
+import SectionFlat from '../components/section-flat'
+import CodeReveal from '../components/code-reveal'
+import Header from '../features/profile/header'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -45,7 +49,21 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <div className="font-josefin relative min-h-screen items-center justify-items-center">
+            <Placeholder className="fixed"></Placeholder>
+            <SectionFlat
+              sidePattern
+              className="bg-background fixed top-0 left-0 z-50 mt-2 mb-2 border-y"
+            >
+              <CodeReveal
+                className="flex w-full justify-end border-b px-2"
+                code="text-foreground font-mono text-sm font-medium"
+              />
+              <Header />
+            </SectionFlat>
+            <div className="mt-[50px]"></div>
+            {children}
+          </div>
         </ThemeProvider>
       </body>
     </html>

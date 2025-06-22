@@ -16,62 +16,45 @@ import Projects from '../features/profile/projects'
 export default function Home() {
   return (
     <>
-      <div className="font-josefin relative min-h-screen items-center justify-items-center">
-        <Placeholder className="fixed"></Placeholder>
+      <HeroBigBG />
 
-        <SectionFlat
-          sidePattern
-          className="bg-background fixed top-0 left-0 z-50 mt-2 mb-2 border-y"
-        >
-          <CodeReveal
-            className="flex w-full justify-end border-b px-2"
-            code="text-foreground font-mono text-sm font-medium"
-          />
-          <Header />
-        </SectionFlat>
-        <div className="mt-[50px]"></div>
+      <SectionFlat sidePattern className="border-y">
+        <Introduction />
+      </SectionFlat>
 
-        <HeroBigBG />
-
-        <SectionFlat sidePattern className="border-y">
-          <Introduction />
-        </SectionFlat>
-
-        <Placeholder />
-        <SectionFlat sidePattern className="h-4 overflow-hidden border-y">
-          <BgPattern className="h-4" />
-        </SectionFlat>
-        <SectionFlat>
-          <span className="px-4 text-2xl font-bold">About me</span>
-        </SectionFlat>
-        <SectionFlat className="border-y">
-          <Overview />
-        </SectionFlat>
-        <Placeholder />
-        <SectionFlat className="mt-2 border-y">
-          <ChatInterface />
-        </SectionFlat>
-        <SectionFlat className="mt-2 border-y">
-          <span className="px-4 text-2xl font-bold">Stacks</span>
-        </SectionFlat>
-        <SectionFlat className="border-b" sidePattern>
-          <Stacks />
-        </SectionFlat>
-        <Placeholder />
-        <SectionFlat></SectionFlat>
-        <SectionFlat sideBorder={false}>
-          <Experiences />
-        </SectionFlat>
-        <Placeholder className="mb-3" />
-        <SectionFlat className="mt-2 border-y">
-          <span className="px-4 text-2xl font-bold">Projects</span>
-        </SectionFlat>
-        {/* <Placeholder /> */}
-        <SectionFlat>
-          <Projects />
-        </SectionFlat>
-      </div>
-      {/* <WelcomeAnimation /> */}
+      <Placeholder />
+      <SectionFlat sidePattern className="h-4 overflow-hidden border-y">
+        <BgPattern className="h-4" />
+      </SectionFlat>
+      <SectionFlat>
+        <span className="px-4 text-2xl font-bold">About me</span>
+      </SectionFlat>
+      <SectionFlat className="border-y">
+        <Overview />
+      </SectionFlat>
+      <Placeholder />
+      <SectionFlat className="mt-2 border-y">
+        <ChatInterface />
+      </SectionFlat>
+      <SectionFlat className="mt-2 border-y">
+        <span className="px-4 text-2xl font-bold">Stacks</span>
+      </SectionFlat>
+      <SectionFlat className="border-b" sidePattern>
+        <Stacks />
+      </SectionFlat>
+      <Placeholder />
+      <SectionFlat></SectionFlat>
+      <SectionFlat sideBorder={false}>
+        <Experiences />
+      </SectionFlat>
+      <Placeholder className="mb-3" />
+      <SectionFlat className="mt-2 border-y">
+        <span className="px-4 text-2xl font-bold">Projects</span>
+      </SectionFlat>
+      <SectionFlat>
+        <Projects />
+      </SectionFlat>
+      <WelcomeAnimation />
     </>
   )
 }
