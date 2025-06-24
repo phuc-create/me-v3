@@ -23,7 +23,7 @@ const SectionFlat: React.FC<SectionFlatProps> = ({
           sideBorder && 'border-r'
         )}
       ></div>
-      <div className="mx-auto flex w-[980px] py-1">{children}</div>
+      <div className="mx-auto w-[980px]">{children}</div>
       <div
         className={cn(
           'bg-background grow',
