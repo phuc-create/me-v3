@@ -1,5 +1,4 @@
 import SectionFlat from '@v3/components/section-flat'
-import Header from '@v3/features/profile/header'
 import Overview from '@v3/features/profile/overview'
 import Placeholder from '@v3/features/profile/placeholder'
 import { BgPattern } from '../features/profile/bg-pattern'
@@ -8,9 +7,7 @@ import CodeReveal from '../components/code-reveal'
 import ChatInterface from '../components/chat-interface'
 import Stacks from '../features/profile/stacks'
 import Experiences from '../features/profile/experiences'
-import WelcomeAnimation from '../features/profile/welcome-animation'
 import Image from 'next/image'
-import { ScrollArea } from '@v3/components/ui/scroll-area'
 import Projects from '../features/profile/projects'
 
 export default function Home() {
@@ -54,7 +51,6 @@ export default function Home() {
       <SectionFlat>
         <Projects />
       </SectionFlat>
-      <WelcomeAnimation />
     </>
   )
 }

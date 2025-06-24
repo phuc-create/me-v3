@@ -8,6 +8,8 @@ import Placeholder from '../features/profile/placeholder'
 import SectionFlat from '../components/section-flat'
 import CodeReveal from '../components/code-reveal'
 import Header from '../features/profile/header'
+import WelcomeAnimation from '../features/profile/welcome-animation'
+import { Toaster } from '../components/ui/sonner'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -43,6 +45,7 @@ export default function RootLayout({
         className={`${josefin.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
         suppressHydrationWarning
       >
+        <Toaster />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -63,6 +66,7 @@ export default function RootLayout({
             </SectionFlat>
             <div className="mt-[50px]"></div>
             {children}
+            <WelcomeAnimation />
           </div>
         </ThemeProvider>
       </body>
