@@ -7,7 +7,7 @@ WORKDIR /app
 COPY package.json package-lock.json* pnpm-lock.yaml* yarn.lock* ./
 
 # install dependencies
-RUN npm install
+RUN npm install --legacy-peer-deps
 
 # Copy toàn bộ code
 COPY . .
