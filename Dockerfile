@@ -1,41 +1,36 @@
-ARG IMAGE_NAME="me-v3"
+# ---- Build Stage ----
+FROM node:20-alpine AS builder
 
-FROM node:latest AS builder
+WORKDIR /app
 
-WORKDIR /me-v3/
+# copy necessary dependencies
+COPY package.json package-lock.json* pnpm-lock.yaml* yarn.lock* ./
 
-# COPY package.json /me-v3/
-# COPY public/ /me-v3/public
-# COPY app/ /me-v3/
+# install dependencies
+RUN bun install
+
+# Copy toàn bộ code
 COPY . .
 
-RUN npm install
+# build project (create folder .next, public, v.v)
+RUN bun run build
 
+# ---- Production Stage ----
+FROM node:20-alpine AS runner
 
-RUN npm run build
+WORKDIR /app
 
+# copy necessary files to start the app (do not copy everything, just what Next need)
+COPY --from=builder /app/.next ./.next
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/public ./public
+COPY --from=builder /app/package.json ./package.json
+# if we have next.config.js, thêm dòng này
+COPY --from=builder /app/next.config.js ./next.config.js
 
-# DEFINE NEW IMAGES FOR SERVING THE APPLICATION
-FROM node:latest
-
-# WORKDIR /usr/share/nginx/html
-
-# RUN rm -rf ./*
-
-# COPY --from=builder /me-v3/build .
-
-# ENV PORT=9999
-
-# EXPOSE 9999
-
-# CMD [ "nginx", "-g", "daemon off;" ]
-WORKDIR /me-v3/
-COPY --from=builder /me-v3/.next ./.next
-COPY --from=builder /me-v3/node_modules ./node_modules
-COPY --from=builder /me-v3/package.json ./package.json
-
+ENV NODE_ENV=production
 ENV PORT=9999
 
 EXPOSE 9999
 
-CMD ["npm", "start"]
+CMD ["bun", "start"]
