@@ -7,13 +7,13 @@ WORKDIR /app
 COPY package.json package-lock.json* pnpm-lock.yaml* yarn.lock* ./
 
 # install dependencies
-RUN bun install
+RUN npm install
 
 # Copy toàn bộ code
 COPY . .
 
 # build project (create folder .next, public, v.v)
-RUN bun run build
+RUN npm run build
 
 # ---- Production Stage ----
 FROM node:20-alpine AS runner
@@ -33,4 +33,4 @@ ENV PORT=9999
 
 EXPOSE 9999
 
-CMD ["bun", "start"]
+CMD ["npm", "start"]
