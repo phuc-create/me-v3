@@ -1,11 +1,9 @@
-import React from 'react'
+'use client'
+import React, { use } from 'react'
+type Params = Promise<{ day: string }>
 
-const SotoryCollectionPage = async ({
-  params
-}: {
-  params: { day: string }
-}) => {
-  const { day } = await params
+const SotoryCollectionPage = (props: { params: Params }) => {
+  const { day } = use(props.params)
   return <div>SotoryCollectionPage :{day}</div>
 }
 
