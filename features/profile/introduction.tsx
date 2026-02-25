@@ -9,7 +9,7 @@ const Introduction = () => {
     <div className="relative flex w-full">
       <Image
         priority
-        className="ring-border ring-offset-background bg-background absolute -top-[75px] left-[2px] h-[156px] w-[156px] rounded-full bg-cover object-cover ring-1 ring-offset-2"
+        className="ring-border ring-offset-background bg-background absolute -top-[55px] h-[136px] w-[136px] rounded-full bg-cover object-cover ring-1 ring-offset-2 md:-top-[75px] md:left-[2px] md:h-[156px] md:w-[156px]"
         // src="/assets/IMG_1845.WEBP"
         src="/assets/IMG_3746.png"
         // src="/assets/ChatGPT Image 22_34_16 8 thg 6, 2025.png"
@@ -17,11 +17,11 @@ const Introduction = () => {
         width={200}
         height={200}
       />
-      <div className="relative h-[84px] w-[160px]">
+      <div className="relative h-[84px] w-[139px] md:w-[160px]">
         {/* Indicator */}
-        <span className="absolute right-5.5 bottom-4 flex size-3">
+        <span className="absolute right-10.5 bottom-3.5 flex size-2.5 md:right-5.5 md:bottom-4 md:size-3">
           <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-sky-400 opacity-75"></span>
-          <span className="relative inline-flex size-3 rounded-full bg-green-500"></span>
+          <span className="relative inline-flex size-2.5 rounded-full bg-green-500 md:size-3"></span>
         </span>
       </div>
       {/* Quick introduction */}
@@ -31,7 +31,7 @@ const Introduction = () => {
           code="text-3xl font-sans tracking-tight"
         />
         <h1
-          className="space-animate relative flex grow scroll-m-20 items-center gap-2 border-b pl-2 text-3xl tracking-tight"
+          className="space-animate relative flex grow scroll-m-20 items-center gap-2 border-b pl-2 text-xl tracking-tight md:text-3xl"
           data-txt="Nguyen Huu Phuc (Sam)"
         >
           Nguyen Huu Phuc (Sam)
@@ -50,7 +50,7 @@ const Introduction = () => {
           code="text-foreground font-mono"
         />
         <RotateWords
-          className="overflow-hidden pl-2"
+          className="overflow-hidden pl-2 text-sm md:text-base"
           words={[
             'Software Developer',
             'Front-end Developer',

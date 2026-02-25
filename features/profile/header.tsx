@@ -9,7 +9,7 @@ const links = [
   { link: '/', label: 'Home', available: true },
   { link: '/contact', label: 'Contact', available: false },
   { link: '/about', label: 'About', available: false },
-  { link: '/story', label: 'Story', available: false }
+  { link: '/story', label: 'Story', available: true }
 ]
 
 const Header = () => {
