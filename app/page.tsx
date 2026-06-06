@@ -9,6 +9,7 @@ import Stacks from '../features/profile/stacks'
 import Experiences from '../features/profile/experiences'
 import Image from 'next/image'
 import Projects from '../features/profile/projects'
+import ExclusivePage from '../features/profile/exclusive'
 
 export default function Home() {
   return (
@@ -50,6 +51,10 @@ export default function Home() {
       </SectionFlat>
       <SectionFlat>
         <Projects />
+      </SectionFlat>
+      <SectionFlat></SectionFlat>
+      <SectionFlat className="border-y">
+        <ExclusivePage />
       </SectionFlat>
     </>
   )
