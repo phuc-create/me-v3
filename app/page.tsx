@@ -10,7 +10,7 @@ import Experiences from '../features/profile/experiences'
 import Image from 'next/image'
 import Projects from '../features/profile/projects'
 import ExclusivePage from '../features/profile/exclusive'
-import VisitorCount from '../components/visitor-count'
+import PageViewCount from '../components/page-view-count'
 
 export default function Home() {
   return (
@@ -85,7 +85,7 @@ const HeroBigBG = () => {
               {/* Hi... */}
               <CodeReveal code="text-4xl font-sans tracking-tight text-white" />
             </h1>
-            <VisitorCount />
+            <PageViewCount />
           </div>
         </div>
       </div>

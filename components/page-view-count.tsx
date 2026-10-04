@@ -1,10 +1,10 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { Users } from 'lucide-react'
+import { Eye } from 'lucide-react'
 
-export default function VisitorCount() {
-  const [visitors, setVisitors] = useState<number | null>(null)
+export default function PageViewCount() {
+  const [pageviews, setPageViews] = useState<number | null>(null)
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
@@ -12,25 +12,25 @@ export default function VisitorCount() {
 
     const refresh = async () => {
       try {
-        const response = await fetch('/api/visitors', {
+        const response = await fetch('/api/page-views', {
           cache: 'no-store',
           signal: AbortSignal.any([
             controller.signal,
             AbortSignal.timeout(10000)
           ])
         })
-        if (!response.ok) throw new Error('Visitor count unavailable')
+        if (!response.ok) throw new Error('Page view count unavailable')
 
         const data = await response.json()
         if (
-          typeof data.visitors !== 'number' ||
-          !Number.isSafeInteger(data.visitors) ||
-          data.visitors < 0
+          typeof data.pageviews !== 'number' ||
+          !Number.isSafeInteger(data.pageviews) ||
+          data.pageviews < 0
         ) {
-          throw new Error('Invalid visitor count')
+          throw new Error('Invalid page view count')
         }
 
-        if (!controller.signal.aborted) setVisitors(data.visitors)
+        if (!controller.signal.aborted) setPageViews(data.pageviews)
       } catch {
         // Preserve the last successful count if a later refresh fails.
       } finally {
@@ -55,18 +55,20 @@ export default function VisitorCount() {
       role="status"
       aria-live="polite"
       aria-atomic="true"
-      title="Visitors recorded by Vercel Analytics since tracking began. Updates periodically; repeat visits on different days can count again."
+      title="Page views recorded across this site since Analytics tracking began. Includes repeat views and updates periodically."
     >
-      <Users className="size-3.5 shrink-0" aria-hidden="true" />
-      {visitors !== null ? (
+      <Eye className="size-3.5 shrink-0" aria-hidden="true" />
+      {pageviews !== null ? (
         <span>
           <span className="text-foreground font-medium tabular-nums">
-            {new Intl.NumberFormat('en-US').format(visitors)}
+            {new Intl.NumberFormat('en-US').format(pageviews)}
           </span>{' '}
-          {visitors === 1 ? 'visitor' : 'visitors'}
+          {pageviews === 1 ? 'page view' : 'page views'}
         </span>
       ) : (
-        <span>{loading ? 'Loading visitors…' : 'Visitors unavailable'}</span>
+        <span>
+          {loading ? 'Loading page views…' : 'Page views unavailable'}
+        </span>
       )}
     </div>
   )

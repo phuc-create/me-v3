@@ -20,9 +20,9 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Visitor counter (Vercel Web Analytics)
+## Page view counter (Vercel Web Analytics)
 
-The homepage displays the project's recorded visitor total below the hero's
+The homepage displays the project's recorded page view total below the hero's
 `text-4xl font-sans tracking-tight text-white` text. The root layout includes
 `@vercel/analytics/next` to collect page views and client-side navigation events.
 
@@ -42,33 +42,30 @@ To connect the counter:
    to `.env.local`, fill in the values privately, and restart `npm run dev`.
 
 Never prefix these credentials with `NEXT_PUBLIC_` or commit `.env.local`.
-The browser reads only `{ visitors }` from `/api/visitors`; credentials and
+The browser reads only `{ pageviews }` from `/api/page-views`; credentials and
 Vercel's detailed response stay on the server.
 
-The server queries the `data.visitors` field of Vercel's production count
+The server queries the `data.pageviews` field of Vercel's production count
 endpoint across **all pages**, without a date filter. This is the total since
 Analytics was enabled, not the dashboard's default reporting window. Tracking
 only begins once the Analytics component is deployed; earlier visits cannot be
-recovered. Vercel's visitor identification resets after 24 hours, so this is an
-analytics visitor count, not a count of distinct humans across all time.
+recovered. Page views include repeat views and client-side page navigation;
+they do not measure unique visitors or people currently online.
 
 Successful upstream reads and public responses are cached for five minutes;
 an open, visible page also checks every five minutes. Analytics processing and
 caching mean a new visit may not appear immediately. No database, GitHub Action,
 or deployment per visit is needed.
 
-Loading shows `Loading visitors…`. Missing configuration, denied API access,
-network failures, or malformed responses show `Visitors unavailable`, never a
+Loading shows `Loading page views…`. Missing configuration, denied API access,
+network failures, or malformed responses show `Page views unavailable`, never a
 fabricated zero. Later refresh failures preserve the last successful count.
 Check Vercel Function logs for API status codes, token access, and project/team
 IDs if the counter stays unavailable. Local development does not send real
 analytics events, but can read production totals when configured.
 
 References: [Analytics API guide](https://vercel.com/docs/analytics/web-analytics-api),
-[count endpoint](https://vercel.com/docs/rest-api/web-analytics/counts-page-views),
-[visitor identification](https://vercel.com/docs/analytics/privacy-policy).
-
-Verify the counter endpoint with `node --test tests/visitor-count.test.cjs`.
+[count endpoint](https://vercel.com/docs/rest-api/web-analytics/counts-page-views).
 
 ## Learn More
 

@@ -6,7 +6,7 @@ export async function GET() {
 
   const unavailable = () =>
     Response.json(
-      { visitors: null },
+      { pageviews: null },
       { status: 503, headers: { 'Cache-Control': 'no-store' } }
     )
 
@@ -15,13 +15,13 @@ export async function GET() {
   }
 
   const url = new URL(
-    'https://api.vercel.com/v1/query/web-analytics/page-views/count'
+    'https://api.vercel.com/v1/query/web-analytics/visits/count'
   )
   url.searchParams.set('projectId', projectId)
   if (teamId) url.searchParams.set('teamId', teamId)
 
   try {
-    // No date/path filter: production visitors across the whole project,
+    // No date/path filter: production page views across the whole project,
     // since Analytics was enabled. Cache reads, never maintain our own total.
     const response = await fetch(url, {
       headers: { Authorization: `Bearer ${token}` },
@@ -30,24 +30,24 @@ export async function GET() {
     })
 
     if (!response.ok) {
-      console.warn('Visitor count: Vercel API returned', response.status)
+      console.warn('Page view count: Vercel API returned', response.status)
       return unavailable()
     }
 
     const payload = await response.json()
-    const visitors: unknown = payload?.data?.visitors
+    const pageviews: unknown = payload?.data?.pageviews
 
     if (
-      typeof visitors !== 'number' ||
-      !Number.isSafeInteger(visitors) ||
-      visitors < 0
+      typeof pageviews !== 'number' ||
+      !Number.isSafeInteger(pageviews) ||
+      pageviews < 0
     ) {
-      console.warn('Visitor count: invalid Vercel API response')
+      console.warn('Page view count: invalid Vercel API response')
       return unavailable()
     }
 
     return Response.json(
-      { visitors },
+      { pageviews },
       {
         headers: {
           'Cache-Control': 'public, max-age=0, s-maxage=300'
@@ -55,7 +55,7 @@ export async function GET() {
       }
     )
   } catch {
-    console.warn('Visitor count: unable to read Vercel Analytics')
+    console.warn('Page view count: unable to read Vercel Analytics')
     return unavailable()
   }
 }
