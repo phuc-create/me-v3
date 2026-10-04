@@ -15,7 +15,7 @@ export async function GET() {
   }
 
   const url = new URL(
-    'https://api.vercel.com/v1/query/web-analytics/visits/count'
+    'https://api.vercel.com/v1/query/web-analytics/page-views/count'
   )
   url.searchParams.set('projectId', projectId)
   if (teamId) url.searchParams.set('teamId', teamId)
