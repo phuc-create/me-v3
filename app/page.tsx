@@ -10,6 +10,7 @@ import Experiences from '../features/profile/experiences'
 import Image from 'next/image'
 import Projects from '../features/profile/projects'
 import ExclusivePage from '../features/profile/exclusive'
+import VisitorCount from '../components/visitor-count'
 
 export default function Home() {
   return (
@@ -80,10 +81,11 @@ const HeroBigBG = () => {
               height={100}
               className="mx-auto"
             />
-            <h1 className="t mb-8 flex flex-col font-sans text-4xl tracking-tight sm:text-6xl lg:text-5xl">
+            <h1 className="t mb-3 flex flex-col font-sans text-4xl tracking-tight sm:text-6xl lg:text-5xl">
               {/* Hi... */}
               <CodeReveal code="text-4xl font-sans tracking-tight text-white" />
             </h1>
+            <VisitorCount />
           </div>
         </div>
       </div>

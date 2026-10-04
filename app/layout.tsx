@@ -10,6 +10,7 @@ import CodeReveal from '../components/code-reveal'
 import Header from '../features/profile/header'
 import WelcomeAnimation from '../features/profile/welcome-animation'
 import { Toaster } from '../components/ui/sonner'
+import { Analytics } from '@vercel/analytics/next'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -69,6 +70,7 @@ export default function RootLayout({
             <WelcomeAnimation />
           </div>
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   )
